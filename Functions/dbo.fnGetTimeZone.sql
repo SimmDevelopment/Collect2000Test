@@ -1,0 +1,19 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+
+
+
+CREATE     FUNCTION [dbo].[fnGetTimeZone](@State VARCHAR(3), @ZipCode VARCHAR(15), @UTC DATETIME)
+RETURNS TINYINT
+AS BEGIN
+	RETURN [dbo].[fnGetTimeZoneEx](@State, @ZipCode, NULL, @UTC);
+END
+
+
+
+
+
+GO

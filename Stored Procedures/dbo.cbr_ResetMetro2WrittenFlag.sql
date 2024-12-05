@@ -1,0 +1,13 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+CREATE PROCEDURE [dbo].[cbr_ResetMetro2WrittenFlag]
+AS
+SET NOCOUNT ON;
+
+UPDATE [dbo].[cbr_accounts] WITH (TABLOCKX)
+SET [written] = 0
+
+RETURN 0;
+GO

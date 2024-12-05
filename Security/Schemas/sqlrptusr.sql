@@ -1,0 +1,3 @@
+CREATE SCHEMA [sqlrptusr]
+AUTHORIZATION [SIMM2K1\sqlrptusr]
+GO

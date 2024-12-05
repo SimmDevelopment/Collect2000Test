@@ -1,0 +1,15 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+CREATE PROCEDURE [dbo].[Arrangements_DeletePromise] @id INTEGER
+AS
+SET NOCOUNT ON;
+
+UPDATE [dbo].[Promises]
+SET [Active] = 0
+WHERE [ID] = @id;
+
+RETURN 0;
+
+GO

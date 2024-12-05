@@ -1,0 +1,32 @@
+CREATE TABLE [dbo].[Services_TransUnion_Locator]
+(
+[ID] [int] NOT NULL IDENTITY(1, 1),
+[RequestID] [int] NULL,
+[TotalMatches] [int] NULL,
+[Results] [int] NULL,
+[Match] [varchar] (5) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[ListingType] [varchar] (5) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[NonPublished] [varchar] (5) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[MatchScore] [int] NULL,
+[MatchCode] [varchar] (5) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[BizGovName] [varchar] (500) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[FirstName] [varchar] (100) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[LastName] [varchar] (100) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[Address] [varchar] (500) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[City] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[State] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[Zipcode] [varchar] (11) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[Phone] [varchar] (15) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[ErrorCode] [int] NULL,
+[l_BizGovName] [varchar] (500) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[l_FirstName] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[l_LastName] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[l_Address] [varchar] (500) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[l_City] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[l_State] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[l_Zipcode] [varchar] (11) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[l_Phone] [varchar] (15) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[CreationDate] [datetime] NULL,
+[AddressType] [varchar] (5) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+) ON [PRIMARY]
+GO

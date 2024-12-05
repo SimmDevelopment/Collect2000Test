@@ -1,0 +1,15 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+CREATE PROCEDURE [dbo].[PoolQueue_FindByName] @Name VARCHAR(255), @ID INTEGER OUTPUT
+AS
+SET NOCOUNT ON;
+
+SELECT @ID = [ID]
+FROM [dbo].[PoolQueueDefinitions]
+WHERE [Name] = @Name;
+
+RETURN 0;
+
+GO

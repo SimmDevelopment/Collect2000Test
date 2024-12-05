@@ -1,0 +1,15 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+CREATE PROCEDURE [dbo].[NACHA_getCompanyID] 
+	@cust VARCHAR(50)
+AS
+BEGIN
+
+SELECT TOP 1 customtext4 FROM customer (NOLOCK) WHERE customer = @cust
+END
+
+
+
+GO

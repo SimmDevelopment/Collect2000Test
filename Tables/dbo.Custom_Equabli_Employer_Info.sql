@@ -1,0 +1,43 @@
+CREATE TABLE [dbo].[Custom_Equabli_Employer_Info]
+(
+[UID] [int] NOT NULL IDENTITY(1, 1),
+[recordType] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[equabliAccountNumber] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[clientAccountNumber] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[equabliClientId] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[clientConsumerNumber] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[equabliConsumerId] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[employerName] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[employerAddress1] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[employerAddress2] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[employerCity] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[employerState] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[employerZipCode] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[employerCountry] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[employerPhone] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[employerFax] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[consumerIdentificationNumber] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[employerEmployeeFirstName] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[employerEmployeeMiddleName] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[employerEmployeeLastName] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[employerPosition] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[employerTitle] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[employerCode] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[employerManager] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[employerEmployeeId] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[employerDisclaimer] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[employerPayrollDisclaimer] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[employerWageBasis] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[employerStatus] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[employerDivisionCode] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[employerEffectiveDate] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[employerMostRecent] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[employerLength] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[employerTerminiation] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[employerIsActive] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[employerId] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[amtConsumerWages] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[Custom_Equabli_Employer_Info] ADD CONSTRAINT [PK_Custom_Equabli_Employer_Info] PRIMARY KEY CLUSTERED ([UID]) ON [PRIMARY]
+GO

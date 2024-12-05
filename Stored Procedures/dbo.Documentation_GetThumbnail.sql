@@ -1,0 +1,15 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+CREATE PROCEDURE [dbo].[Documentation_GetThumbnail] @DocumentID UNIQUEIDENTIFIER
+AS
+SET NOCOUNT ON;
+
+SELECT [Thumbnail]
+FROM [dbo].[Documentation]
+WHERE [UID] = @DocumentID;
+
+RETURN 0;
+
+GO

@@ -1,0 +1,14 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+CREATE PROCEDURE [dbo].[WorkFlow_PauseAccountWorkFlow] @ExecID UNIQUEIDENTIFIER
+AS
+SET NOCOUNT ON;
+
+UPDATE [dbo].[WorkFlow_Execution]
+SET [PauseCount] = [PauseCount] + 1
+WHERE [ID] = @ExecID;
+
+RETURN 0;
+GO

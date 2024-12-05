@@ -1,0 +1,3 @@
+CREATE SCHEMA [dsh]
+AUTHORIZATION [db_owner]
+GO

@@ -1,0 +1,43 @@
+CREATE TABLE [dbo].[Services_LexisNexis_SkipTrace_341]
+(
+[ID] [int] NOT NULL IDENTITY(1, 1),
+[RequestId] [int] NOT NULL,
+[RecordId] [varchar] (2) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[Agency] [varchar] (5) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[Batch] [varchar] (5) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[DocumentId] [int] NULL,
+[MatchCode] [int] NULL,
+[GivenNameAlert] [int] NULL,
+[SurnameAlert] [int] NULL,
+[Gender Alert] [int] NULL,
+[Subunit Alert] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[Status Date] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[Funds] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[DismissalFlag] [varchar] (5) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[DispositionCode] [varchar] (5) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[ChapterCode] [varchar] (5) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[AliasFlag] [varchar] (2) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[FilingDate] [datetime] NULL,
+[CaseNumber] [varchar] (20) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[ECOACode] [varchar] (2) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[CityFiled] [varchar] (25) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[StateFiled] [varchar] (5) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[CountyFiled] [varchar] (30) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[CountyFiledCode] [varchar] (5) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[341Location] [varchar] (60) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[Reserved1] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[ClientId] [varchar] (5) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[Reserved2] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[341Date] [datetime] NULL,
+[341Time] [datetime] NULL,
+[Bardate] [datetime] NULL,
+[POCDate] [datetime] NULL,
+[DebtorPhone] [varchar] (15) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[Screen] [varchar] (2) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[Reserved3] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[Branch] [varchar] (10) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[Reserved4] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[Services_LexisNexis_SkipTrace_341] ADD CONSTRAINT [PK_Services_LexisNexis_SkipTrace_341] PRIMARY KEY CLUSTERED ([ID]) WITH (FILLFACTOR=90) ON [PRIMARY]
+GO

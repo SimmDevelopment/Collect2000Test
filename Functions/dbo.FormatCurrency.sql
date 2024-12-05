@@ -1,0 +1,15 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+CREATE FUNCTION [dbo].[FormatCurrency](@input MONEY)
+RETURNS VARCHAR(50)
+AS BEGIN
+	IF @input IS NULL
+		RETURN '$0.00';
+	IF @input < 0
+		RETURN '($' + CONVERT(VARCHAR(50), @input, 1) + ')';
+	RETURN '$' + CONVERT(VARCHAR(50), @input, 1);
+END
+
+GO

@@ -1,0 +1,17 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+CREATE PROCEDURE [dbo].[WorkFlow_Action_Delay] @Duration BIGINT, @RetryDelay BIGINT, @NextActivityID UNIQUEIDENTIFIER
+AS
+SET NOCOUNT ON;
+
+UPDATE #WorkFlowExec
+SET [NextActivityID] = CASE
+	WHEN [EnteredDate] <= DATEADD(MINUTE, -@Duration, GETDATE()) THEN @NextActivityID
+	ELSE NULL
+END,
+	[NextEvaluateDate] = DATEADD(MINUTE, @RetryDelay, GETDATE());
+
+RETURN 0;
+GO

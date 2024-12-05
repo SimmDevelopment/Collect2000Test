@@ -1,0 +1,13 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+CREATE VIEW [dbo].[vCustomerCOB]
+WITH SCHEMABINDING
+AS
+SELECT [customer].[customer],
+	[COB].[Code] AS [COB]
+FROM [dbo].[customer]
+INNER JOIN [dbo].[COB]
+ON CASE WHEN [COB] LIKE '% - %' THEN LEFT([COB], CHARINDEX(' - ', [COB]) - 1) ELSE [COB] END = [COB].[Code]
+GO

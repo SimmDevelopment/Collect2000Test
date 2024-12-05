@@ -1,0 +1,53 @@
+CREATE TABLE [dbo].[ChecksOnline]
+(
+[Number] [int] NOT NULL,
+[Account] [varchar] (30) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[name] [varchar] (30) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[Addr] [varchar] (39) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[City] [varchar] (35) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[State] [varchar] (2) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[zipcode] [varchar] (9) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[aba] [varchar] (9) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[Phone] [varchar] (14) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[BankName] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[Desk] [varchar] (7) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[Approvedby] [varchar] (7) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[customer] [varchar] (30) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[ExportedBy] [varchar] (7) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[ApprovedDate] [datetime] NULL,
+[DeskName] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[BankAddr] [varchar] (40) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[BankState] [varchar] (2) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[Bankcity] [varchar] (30) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[BankZip] [varchar] (9) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[BankPhone] [varchar] (14) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[CheckNbr1] [varchar] (8) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[CheckNbr2] [varchar] (8) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[CheckNbr3] [varchar] (8) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[CheckNbr4] [varchar] (8) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[CheckNbr5] [varchar] (8) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[CheckNbr6] [varchar] (8) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[CheckNbr7] [varchar] (8) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[CheckNbr8] [varchar] (8) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[CheckAmt1] [money] NULL,
+[CheckAmt2] [money] NULL,
+[CheckAmt3] [money] NULL,
+[CheckAmt4] [money] NULL,
+[CheckAmt5] [money] NULL,
+[CheckAmt6] [money] NULL,
+[CheckAmt7] [money] NULL,
+[CheckAmt8] [money] NULL,
+[CheckDate1] [char] (15) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[CheckDate2] [char] (15) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[CheckDate3] [char] (15) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[CheckDate4] [char] (15) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[CheckDate5] [char] (15) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[CheckDate6] [char] (15) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[CheckDate7] [char] (15) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[CheckDate8] [char] (15) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+) ON [PRIMARY]
+GO
+CREATE CLUSTERED INDEX [Checksonline1] ON [dbo].[ChecksOnline] ([Number]) WITH (FILLFACTOR=90) ON [PRIMARY]
+GO
+EXEC sp_addextendedproperty N'MS_Description', N'Table used by Latitude and Direct-Check to print and batch process paper drafts', 'SCHEMA', N'dbo', 'TABLE', N'ChecksOnline', NULL, NULL
+GO

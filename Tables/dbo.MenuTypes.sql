@@ -1,0 +1,8 @@
+CREATE TABLE [dbo].[MenuTypes]
+(
+[MenuTypeID] [int] NOT NULL,
+[MenuType] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[MenuTypes] ADD CONSTRAINT [PK_MenuTypes] PRIMARY KEY CLUSTERED ([MenuTypeID]) WITH (FILLFACTOR=90) ON [PRIMARY]
+GO

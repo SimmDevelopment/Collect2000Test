@@ -1,0 +1,14 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+CREATE PROCEDURE [dbo].[Attunely_Staging_LegalComplaints]
+	@FromDate DATETIME
+AS
+BEGIN
+	SET NOCOUNT ON; 
+	DECLARE @Updated BIT = 0
+
+	SELECT @Updated
+END
+GO

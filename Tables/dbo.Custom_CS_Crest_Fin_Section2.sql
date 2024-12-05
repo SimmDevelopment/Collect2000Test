@@ -1,0 +1,41 @@
+CREATE TABLE [dbo].[Custom_CS_Crest_Fin_Section2]
+(
+[ID] [int] NOT NULL IDENTITY(1, 1),
+[LoanIdent] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[DisplayIdent] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[Portfolio] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[LoanNumber] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[LoanGroup] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[LoanStatus] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[SetupDate] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[MaturityDate] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[LastActivity] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[InterestAccruedThrough] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[InterestPaidThrough] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[PrincipalPaidThrough] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[LoanType] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[InterestType] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[CurrentRate] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[TermType] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[Term] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[PaymentsMade] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[PaymentsRemaining] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[OriginalLoanAmount] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[PrincipalBalance] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[InterestBalance] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[FeesBalance] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[TotalFees] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[LateChargesBalance] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[SuspenseBalance] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[PerDiem] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[RegularPayment] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[LastPaymentAmount] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[NextPrincipalDueDateToBePaid] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[NextInterestDueDateToBePaid] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[LastPaymentDate] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[BalloonDate] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[RecordType] [nvarchar] (255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[Custom_CS_Crest_Fin_Section2] ADD CONSTRAINT [PK_Custom_CS_Cred_Fin_Section2] PRIMARY KEY CLUSTERED ([ID]) ON [PRIMARY]
+GO

@@ -1,0 +1,8 @@
+CREATE TABLE [dbo].[Native_OOS_Types]
+(
+[Id] [tinyint] NOT NULL IDENTITY(1, 1),
+[OOSType] [varchar] (30) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[Native_OOS_Types] ADD CONSTRAINT [PK__Native_O__3214EC0724F8BF73] PRIMARY KEY CLUSTERED ([Id]) ON [PRIMARY]
+GO

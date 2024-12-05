@@ -1,0 +1,24 @@
+CREATE TABLE [dbo].[Custom_Sallie_Mae_Post_Recon_Import]
+(
+[ID] [int] NOT NULL IDENTITY(1, 1),
+[RecordID] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[ARACID] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[ARACCLACCT] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[ARACVENDID] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[ARACVENSTATID] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[AFACBCURBALPRN] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[AFACBCURBALINT] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[AFACBCURBALAIN] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[AFACBCURBALPJI] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[AFACBCURBALOTHR] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[AFACBCURBALPNLTY] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[AFACBCURBALCCAGY] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[AFACBCURBALCOLL] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[AFACBCURBALFBFEE] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[AFACBCURBALMSI] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[AFACINTRATE] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[AFACINTHRUDT] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[Custom_Sallie_Mae_Post_Recon_Import] ADD CONSTRAINT [PK_Custom_SallieMae_Recon_Import] PRIMARY KEY CLUSTERED ([ID]) ON [PRIMARY]
+GO

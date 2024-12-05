@@ -1,0 +1,10 @@
+SET QUOTED_IDENTIFIER OFF
+GO
+SET ANSI_NULLS OFF
+GO
+CREATE Procedure [dbo].[sp_ControlFile_GetAll]
+AS
+
+SELECT *
+FROM controlFile
+GO

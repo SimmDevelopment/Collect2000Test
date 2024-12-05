@@ -1,0 +1,14 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+CREATE PROCEDURE [dbo].[WorkFlow_Action_MoveToNextActivity] @ActivityID UNIQUEIDENTIFIER, @NextActivityID UNIQUEIDENTIFIER
+AS
+SET NOCOUNT ON;
+
+UPDATE #WorkFlowExec
+SET [NextActivityID] = @NextActivityID
+WHERE [NextActivityID] IS NULL;
+
+RETURN 0;
+GO

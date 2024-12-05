@@ -1,0 +1,16 @@
+CREATE TABLE [dbo].[PODPmtBatchDetail]
+(
+[BatchItemsID] [int] NOT NULL,
+[PODID] [int] NOT NULL,
+[UID] [int] NOT NULL IDENTITY(1, 1),
+[PaidAmt] [money] NOT NULL,
+[FeeAmt] [money] NOT NULL,
+[BatchType] [int] NOT NULL
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[PODPmtBatchDetail] ADD CONSTRAINT [PK_PODPmtBatchDetail] PRIMARY KEY CLUSTERED ([UID]) WITH (FILLFACTOR=90) ON [PRIMARY]
+GO
+CREATE NONCLUSTERED INDEX [IX_PODPmtBatchDetail_PH] ON [dbo].[PODPmtBatchDetail] ([BatchItemsID]) WITH (FILLFACTOR=90) ON [PRIMARY]
+GO
+CREATE NONCLUSTERED INDEX [IX_PODPmtBatchDetail_PODID] ON [dbo].[PODPmtBatchDetail] ([PODID]) WITH (FILLFACTOR=90) ON [PRIMARY]
+GO

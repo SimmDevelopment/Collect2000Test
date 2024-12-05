@@ -1,0 +1,19 @@
+CREATE TABLE [dbo].[Services_PUBLISHED]
+(
+[Id] [int] NOT NULL IDENTITY(1, 1),
+[DatePublished] [datetime] NOT NULL,
+[ManifestID] [uniqueidentifier] NOT NULL,
+[Name] [varchar] (256) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+[Version] [varchar] (256) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+[imgManifest] [image] NOT NULL,
+[xmlManifest] [ntext] COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[Services_PUBLISHED] ADD CONSTRAINT [PK_Services_PUBLISHED] PRIMARY KEY CLUSTERED ([Id]) WITH (FILLFACTOR=90) ON [PRIMARY]
+GO
+CREATE NONCLUSTERED INDEX [IX_Services_PUBLISHED_ManifestID] ON [dbo].[Services_PUBLISHED] ([ManifestID]) WITH (FILLFACTOR=90) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[Services_PUBLISHED] WITH NOCHECK ADD CONSTRAINT [FK_Services_PUBLISHED_Services_MANIFEST] FOREIGN KEY ([ManifestID]) REFERENCES [dbo].[Services_MANIFEST] ([ManifestID]) NOT FOR REPLICATION
+GO
+ALTER TABLE [dbo].[Services_PUBLISHED] NOCHECK CONSTRAINT [FK_Services_PUBLISHED_Services_MANIFEST]
+GO

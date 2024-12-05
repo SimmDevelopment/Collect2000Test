@@ -1,0 +1,15 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+CREATE PROCEDURE [dbo].[WorkFlow_WorkFlowNameExists] @Name NVARCHAR(260), @Exists BIT OUTPUT
+AS
+SET NOCOUNT ON;
+
+IF EXISTS (SELECT * FROM [dbo].[WorkFlows] WHERE [Name] = @Name AND [Active] = 1)
+	SET @Exists = 1;
+ELSE
+	SET @Exists = 0;
+
+RETURN 0;
+GO

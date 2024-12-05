@@ -1,0 +1,30 @@
+CREATE TABLE [bck].[ServiceHistory_Remove_brianm_12052023_164212]
+(
+[historyid] [int] NOT NULL,
+[RequestID] [int] NOT NULL,
+[AcctID] [int] NULL,
+[DebtorID] [int] NULL,
+[CreationDate] [datetime] NULL,
+[ReturnedDate] [datetime] NULL,
+[ServiceID] [int] NULL,
+[RequestedBY] [varchar] (256) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[RequestedProgram] [varchar] (256) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[Processed] [int] NULL,
+[XMLInfoRequested] [text] COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[XMLInfoReturned] [text] COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[FileName] [varchar] (2000) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[Cost] [money] NULL,
+[SystemYear] [int] NULL,
+[SystemMonth] [int] NULL,
+[ServiceBatch] [float] NULL,
+[VerifiedBy] [varchar] (10) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[VerifiedDate] [datetime] NULL,
+[BatchId] [uniqueidentifier] NULL,
+[ProfileID] [uniqueidentifier] NULL,
+[TypeName] [varchar] (25) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[PackageID] [int] NULL,
+[RequestingDate] [datetime] NULL,
+[RequestedDate] [datetime] NULL,
+[ResponseBatchID] [uniqueidentifier] NULL
+) ON [PRIMARY]
+GO

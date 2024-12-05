@@ -1,0 +1,18 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+CREATE PROCEDURE [dbo].[Arrangements_HoldPdc] @id INTEGER, @hold BIT
+AS
+SET NOCOUNT ON;
+
+UPDATE [dbo].[pdc]
+SET [onhold] = CASE @hold
+	WHEN 1 THEN CAST({ fn CURDATE() } AS DATETIME)
+	ELSE NULL
+END
+WHERE [UID] = @id;
+
+RETURN 0;
+
+GO

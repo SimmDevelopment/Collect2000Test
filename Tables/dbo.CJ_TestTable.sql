@@ -1,0 +1,8 @@
+CREATE TABLE [dbo].[CJ_TestTable]
+(
+[ID] [int] NOT NULL IDENTITY(1, 1),
+[TestData] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[CJ_TestTable] ADD CONSTRAINT [PK_CJ_TestTable] PRIMARY KEY CLUSTERED ([ID]) ON [PRIMARY]
+GO

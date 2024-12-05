@@ -1,0 +1,14 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+CREATE PROCEDURE [dbo].[Documentation_DeleteDocument] @DocumentID UNIQUEIDENTIFIER
+AS
+SET NOCOUNT ON;
+
+DELETE FROM [dbo].[Documentation]
+WHERE [UID] = @DocumentID;
+
+RETURN 0;
+
+GO

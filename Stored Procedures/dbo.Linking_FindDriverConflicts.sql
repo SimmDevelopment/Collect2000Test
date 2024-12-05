@@ -1,0 +1,52 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+CREATE PROCEDURE [dbo].[Linking_FindDriverConflicts]
+AS
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+SET NOCOUNT ON;
+SET ANSI_NULLS ON;
+SET ANSI_PADDING ON;
+SET ANSI_WARNINGS ON;
+SET ARITHABORT ON;
+SET CONCAT_NULL_YIELDS_NULL ON;
+SET QUOTED_IDENTIFIER ON;
+SET NUMERIC_ROUNDABORT OFF;
+
+DECLARE @Conflicts TABLE (
+	[ID] INTEGER NOT NULL IDENTITY(1, 1) PRIMARY KEY CLUSTERED,
+	[LinkID] INTEGER NOT NULL
+);
+DECLARE @Link INTEGER;
+DECLARE @Index INTEGER;
+
+INSERT INTO @Conflicts ([LinkID])
+SELECT [master].[link]
+FROM [dbo].[master]
+WHERE [master].[link] > 0
+AND [master].[qlevel] < '998'
+GROUP BY [master].[link]
+HAVING SUM(
+	CASE [master].[LinkDriver]
+		WHEN 1 THEN 1
+		ELSE 0
+	END) <> 1;
+
+SET @Index = 1;
+
+WHILE EXISTS (SELECT * FROM @Conflicts WHERE [ID] = @Index) BEGIN
+	SELECT @Link = [LinkID]
+	FROM @Conflicts
+	WHERE [ID] = @Index;
+
+	EXEC [dbo].[Linking_EvaluateDriver] @Link = @Link;
+
+	SET @Index = @Index + 1;
+END;
+
+RETURN 0;
+
+
+GO

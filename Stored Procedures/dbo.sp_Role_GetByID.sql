@@ -1,0 +1,16 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+
+
+/*sp_Role_GetByID*/
+CREATE Procedure [dbo].[sp_Role_GetByID]
+@ID INT
+AS
+
+SELECT *
+FROM Roles
+WHERE ID = @ID
+GO

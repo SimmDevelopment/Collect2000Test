@@ -1,0 +1,127 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+CREATE procedure [dbo].[Lib_Insert_CareAndHardship]
+(
+      @CareAndHardshipId   int output,
+      @CARETYPECODE   varchar (20),
+      @FINANCIALHARDSHIPCODE   varchar (20),
+	  @ACCOUNTID   int,	  
+      @DEBTORID   int,
+      @CONTACTLETTER   bit,
+      @CONTACTTELEPHONE   bit,
+      @CONTACTSMS   bit,
+      @CONTACTEMAIL   bit,
+      @CONTACTFAX   bit,
+      @BRAILLE   bit,
+      @LARGEPRINT   bit,
+      @AUDIOFILES   bit,
+      @COMMENT   varchar (8000),
+      @STATUS   varchar (255),
+      @CONSENT   bit,
+      @HOLDDAYSAPPROVED   bit,
+      @HOLDEXPIRATIONDATE   datetime,
+      @HOLDDAYS   int,
+      @CAREPROOFREQUESTED   bit,
+      @CAREPROOFRECEIVED   bit,
+      @HARDSHIPPROOFREQUESTED   bit,
+      @HARDSHIPPROOFRECEIVED   bit,
+      @FINANCIALHARDSHIP   varchar (255),
+      @CONFIRMED   bit,
+      @CLOSEDDATE   datetime,
+      @DDANOTE   varchar (8000),
+      @PRISONNAME   varchar (100),
+      @PRISONNUMBER   varchar (50),
+      @PRISONSENTENCEDATE   datetime,
+      @PRISONRELEASEDATE   datetime,
+      @PRISONINFORMANT   varchar (100),
+      @CREATEDWHEN   datetime,
+      @CREATEDBY   varchar (255),
+      @MODIFIEDWHEN   datetime,
+      @MODIFIEDBY   varchar (255)
+)
+as
+begin
+
+
+insert into dbo.CareAndHardship
+(
+
+      [CARETYPECODE],
+      [FINANCIALHARDSHIPCODE],
+	  [ACCOUNTID],
+      [DEBTORID],
+      [CONTACTLETTER],
+      [CONTACTTELEPHONE],
+      [CONTACTSMS],
+      [CONTACTEMAIL],
+      [CONTACTFAX],
+      [BRAILLE],
+      [LARGEPRINT],
+      [AUDIOFILES],
+      [COMMENT],
+      [STATUS],
+      [CONSENT],
+      [HOLDDAYSAPPROVED],
+      [HOLDEXPIRATIONDATE],
+      [HOLDDAYS],
+      [CAREPROOFREQUESTED],
+      [CAREPROOFRECEIVED],
+      [HARDSHIPPROOFREQUESTED],
+      [HARDSHIPPROOFRECEIVED],
+      [FINANCIALHARDSHIP],
+      [CONFIRMED],
+      [CLOSEDDATE],
+      [DDANOTE],
+      [PRISONNAME],
+      [PRISONNUMBER],
+      [PRISONSENTENCEDATE],
+      [PRISONRELEASEDATE],
+      [PRISONINFORMANT],
+      [CREATEDWHEN],
+      [CREATEDBY],
+      [MODIFIEDWHEN],
+      [MODIFIEDBY]
+)
+SELECT
+      @CARETYPECODE,
+      @FINANCIALHARDSHIPCODE,
+	  d.Number,
+      d.DebtorID,--@DEBTORID,
+      @CONTACTLETTER,
+      @CONTACTTELEPHONE,
+      @CONTACTSMS,
+      @CONTACTEMAIL,
+      @CONTACTFAX,
+      @BRAILLE,
+      @LARGEPRINT,
+      @AUDIOFILES,
+      @COMMENT,
+      @STATUS,
+      @CONSENT,
+      @HOLDDAYSAPPROVED,
+      @HOLDEXPIRATIONDATE,
+      @HOLDDAYS,
+      @CAREPROOFREQUESTED,
+      @CAREPROOFRECEIVED,
+      @HARDSHIPPROOFREQUESTED,
+      @HARDSHIPPROOFRECEIVED,
+      @FINANCIALHARDSHIP,
+      @CONFIRMED,
+      @CLOSEDDATE,
+      @DDANOTE,
+      @PRISONNAME,
+      @PRISONNUMBER,
+      @PRISONSENTENCEDATE,
+      @PRISONRELEASEDATE,
+      @PRISONINFORMANT,
+      @CREATEDWHEN,
+      @CREATEDBY,
+      @MODIFIEDWHEN,
+      @MODIFIEDBY
+FROM Debtors d WITH (NOLOCK) WHERE d.DebtorId = @DEBTORID;
+
+select @CareAndHardshipId = SCOPE_IDENTITY()
+end
+GO

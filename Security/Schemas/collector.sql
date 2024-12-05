@@ -1,0 +1,3 @@
+CREATE SCHEMA [collector]
+AUTHORIZATION [dbo]
+GO

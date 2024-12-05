@@ -1,0 +1,15 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+CREATE  FUNCTION [dbo].[GetBusinessName] (@input VARCHAR(260), @minsize INTEGER)
+RETURNS VARCHAR(260)
+AS BEGIN
+	RETURN [dbo].[GetBusinessNameEx](@input);
+END
+
+
+
+
+GO

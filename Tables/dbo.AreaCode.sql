@@ -1,0 +1,21 @@
+CREATE TABLE [dbo].[AreaCode]
+(
+[AREACODE] [varchar] (3) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+[PREFIX] [varchar] (3) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+[COUNTRY] [varchar] (2) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[STATE] [varchar] (2) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[CITY] [varchar] (30) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[COUNTY] [varchar] (30) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[LAT] [float] NULL,
+[LON] [float] NULL,
+[LATA] [varchar] (3) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[OFFSET] [smallint] NULL,
+[HasDST] [bit] NULL,
+[TIMEZONE] [smallint] NULL,
+[TIMECUR] AS (dateadd(hour,[OFFSET],getutcdate())),
+[DSTON] [bit] NULL CONSTRAINT [DF__AreaCode__DSTON__1ED998B2] DEFAULT ((0)),
+[ACTIVE] [bit] NOT NULL CONSTRAINT [DF_AreaCode_ACTIVE] DEFAULT ((1))
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[AreaCode] ADD CONSTRAINT [PK_AREACODE] PRIMARY KEY CLUSTERED ([AREACODE], [PREFIX]) WITH (FILLFACTOR=80, STATISTICS_NORECOMPUTE=ON) ON [PRIMARY]
+GO
